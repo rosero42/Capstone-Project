@@ -7,9 +7,9 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "chicken",
+"name": "pretzel",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ) ],
@@ -17,9 +17,9 @@ animations = [ {
 "name": "apple",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "pretzel",
+"name": "chicken",
 "speed": 5.0
 } ]
 
@@ -27,7 +27,7 @@ animations = [ {
 radius = 7.26773
 
 [node name="Food" type="Area2D"]
-collision_layer = 8
+collision_layer = 4
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

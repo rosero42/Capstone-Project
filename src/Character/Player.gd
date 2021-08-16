@@ -5,16 +5,19 @@ extends Character
 var direction: = Vector2.ZERO
 var score = 0
 var health = 1000
+var timer_arr = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Score.text = str(score)
+	$Stuck.hide()
+	$GameOver.hide()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if health > 0:
 		update_health(-0.5)
 		if health == 0:
-			print("health depleted")
+			game_over()
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0
 	direction = get_direction()
 	if direction.y == 1:
@@ -59,11 +62,15 @@ func _on_ItemDetector_area_entered(area):
 	if not area.get("type") == null:
 		print(area.type)
 		handle_item(area.type)
+	else:
+		print("enemy collision")
 
 func handle_item(type):
 	if type == "coin":
 		score += 1
 		$Score.text = str(score)
+	elif type == "enemy":
+		pass
 	else:
 		update_health(200)
 
@@ -75,5 +82,30 @@ func update_health(value):
 		health -= value
 
 
-func _on_EnemyDetector_body_entered(body):
+func _on_EnemyDetector_body_entered(_body):
 	print("Enemy Detected")
+	$AnimatedSprite.animation = "hit"
+	if speed.x -100 >= 0:
+		var timer = Timer.new()
+		timer.connect("timeout", self, "_remove_penalty")
+		add_child(timer)
+		timer.start(30)
+		add_child(timer)
+		speed.x -= 100
+		if speed.x == 0:
+			$Stuck.show()
+		timer_arr.append(timer)
+	else:
+		$Stuck.show()
+
+func _remove_penalty():
+	speed.x += 100
+	print("penalty removed")
+	timer_arr.front().stop()
+	timer_arr.pop_front()
+	$Stuck.hide()
+
+func game_over():
+	$GameOver.show()
+	$Stuck.hide()
+	get_tree().paused = true

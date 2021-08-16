@@ -1,7 +1,7 @@
 extends Node2D
 
 #export (PackedScene) var Food
-export (PackedScene) var Coin
+#export (PackedScene) var Coin
 signal back_to_menu_level
 
 
@@ -15,7 +15,7 @@ func _ready():
 	randomize()
 	for i in range(20):
 		$ItemPath/ItemSpawnLocation.offset = randi()
-		var coin = preload("res://Coin.tscn").instance()
+		var coin = preload("res://src/Coin.tscn").instance()
 		add_child(coin)
 		coin.position = $ItemPath/ItemSpawnLocation.position
 	for i in range(30):
