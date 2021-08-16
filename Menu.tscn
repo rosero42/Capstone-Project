@@ -7,15 +7,15 @@
 size = 87
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 1 )
+
 [sub_resource type="DynamicFont" id=3]
 size = 40
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 40
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=2]
 size = 40
 font_data = ExtResource( 1 )
 
@@ -49,7 +49,7 @@ margin_left = 410.585
 margin_top = 217.091
 margin_right = 654.585
 margin_bottom = 278.091
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "How to Play"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -60,7 +60,7 @@ margin_left = 484.208
 margin_top = 348.29
 margin_right = 571.208
 margin_bottom = 409.29
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 text = "Play!"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -71,7 +71,7 @@ margin_left = 449.284
 margin_top = 481.376
 margin_right = 612.284
 margin_bottom = 542.376
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 text = "About"
 __meta__ = {
 "_edit_use_anchors_": false

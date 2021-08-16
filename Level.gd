@@ -2,7 +2,7 @@ extends Node2D
 
 #export (PackedScene) var Food
 #export (PackedScene) var Coin
-signal back_to_menu_level
+signal back_to_menu
 
 
 # Declare member variables here. Examples:
@@ -42,4 +42,4 @@ func _process(delta):
 
 
 func _on_BackButton_pressed():
-	emit_signal("back_to_menu_level", 'Level')
+	emit_signal("back_to_menu")

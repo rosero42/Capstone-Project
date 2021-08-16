@@ -108,4 +108,5 @@ func _remove_penalty():
 func game_over():
 	$GameOver.show()
 	$Stuck.hide()
-	get_tree().paused = true
+	#get_tree().paused = true
+	set_physics_process(false)
