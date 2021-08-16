@@ -8,6 +8,15 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SilentWolf.configure({
+		"api_key": "FqXfgWVsDQ1MRqHFmx6pS29OP7QF4wtT6dLFie8s",
+		"game_id": "IndustrialComplex",
+		"game_version": "1.0.0",
+		"log_level": 1
+		})
+	SilentWolf.configure_scores({
+		"open_scene_on_close": "res://Main.tscn"
+		})
 	var menu = preload("res://Menu.tscn").instance()
 	add_child(menu)
 	menu.connect("load_instructions", self, "_load_instructions")
@@ -31,6 +40,7 @@ func _create_game():
 	add_child(game)
 	remove_child(get_node("Menu"))
 	game.connect("back_to_menu", self, "_back_from_level")
+	game.connect("game_over", self, "_game_over")
 	print_tree()
 
 func _load_about():
@@ -48,6 +58,12 @@ func _back_from_level():
 	menu.connect("create_game", self, "_create_game")
 	menu.connect("load_about", self, "_load_about")
 	remove_child(get_node("Level"))
+
+func _game_over(score):
+	var namepage = preload("res://NamePage.tscn").instance()
+	namepage.score = score
+	add_child(namepage)
+	remove_child(get_node('Level'))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

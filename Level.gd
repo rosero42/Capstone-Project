@@ -3,6 +3,7 @@ extends Node2D
 #export (PackedScene) var Food
 #export (PackedScene) var Coin
 signal back_to_menu
+signal game_over
 
 
 # Declare member variables here. Examples:
@@ -43,3 +44,7 @@ func _process(delta):
 
 func _on_BackButton_pressed():
 	emit_signal("back_to_menu")
+
+
+func _on_Player_game_over(score):
+	emit_signal("game_over", score)

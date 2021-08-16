@@ -1293,4 +1293,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[connection signal="game_over" from="Player" to="." method="_on_Player_game_over"]
 [connection signal="pressed" from="Player/BackButton" to="." method="_on_BackButton_pressed"]

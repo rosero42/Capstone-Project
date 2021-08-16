@@ -48,12 +48,78 @@ __meta__ = {
 }
 
 [node name="BackButton" type="Button" parent="."]
-margin_right = 12.0
-margin_bottom = 20.0
+margin_left = 28.5088
+margin_top = 22.2725
+margin_right = 295.509
+margin_bottom = 83.2725
 custom_fonts/font = SubResource( 2 )
 text = "Back to Main Menu"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="SPLink" type="LinkButton" parent="."]
+margin_left = 34.1291
+margin_top = 483.363
+margin_right = 180.129
+margin_bottom = 497.363
+custom_colors/font_color = Color( 0.0705882, 0.0431373, 0.976471, 1 )
+text = "The Sentencing Project"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResearchPaperLink" type="LinkButton" parent="."]
+margin_left = 391.199
+margin_top = 209.054
+margin_right = 604.199
+margin_bottom = 223.054
+focus_mode = 2
+custom_colors/font_color = Color( 0.0705882, 0.0431373, 0.976471, 1 )
+text = "Why is Prison Reform Necessary?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FAMMLink" type="LinkButton" parent="."]
+margin_left = 34.9228
+margin_top = 508.762
+margin_right = 180.923
+margin_bottom = 522.762
+focus_mode = 2
+custom_colors/font_color = Color( 0.0705882, 0.0431373, 0.976471, 1 )
+text = "Families Against Manditory Minimums"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NAACPLink" type="LinkButton" parent="."]
+margin_left = 33.7307
+margin_top = 540.542
+margin_right = 179.731
+margin_bottom = 554.542
+focus_mode = 2
+custom_colors/font_color = Color( 0.0705882, 0.0431373, 0.976471, 1 )
+text = "NAACP Legal Defense and Edulcation Fund"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 138.156
+margin_top = 139.491
+margin_right = 819.156
+margin_bottom = 153.491
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "My inspiration for this game is to simulate how hard it can be to get ahead once you make a small mistake.
+Every day, thousands of people in the United States become incarcerated for a relatively minor crime. With the
+way that the current legal system is set up, once one mistake is made, it can completely ruin your life"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="SPLink" to="." method="_on_SPLink_pressed"]
+[connection signal="pressed" from="ResearchPaperLink" to="." method="_on_ResearchPaperLink_pressed"]
+[connection signal="pressed" from="FAMMLink" to="." method="_on_FAMMLink_pressed"]
+[connection signal="pressed" from="NAACPLink" to="." method="_on_NAACPLink_pressed"]

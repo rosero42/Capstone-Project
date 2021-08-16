@@ -6,6 +6,7 @@ var direction: = Vector2.ZERO
 var score = 0
 var health = 1000
 var timer_arr = []
+signal game_over
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -110,3 +111,9 @@ func game_over():
 	$Stuck.hide()
 	#get_tree().paused = true
 	set_physics_process(false)
+	$GameOverTimer.start()
+
+
+func _on_GameOverTimer_timeout():
+	$GameOverTimer.stop()
+	emit_signal("game_over", score)

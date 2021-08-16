@@ -162,5 +162,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="GameOverTimer" type="Timer" parent="."]
+wait_time = 3.0
+
 [connection signal="area_entered" from="ItemDetector" to="." method="_on_ItemDetector_area_entered"]
 [connection signal="body_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_body_entered"]
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_GameOverTimer_timeout"]

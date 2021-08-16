@@ -19,3 +19,19 @@ func _ready():
 
 func _on_BackButton_pressed():
 	emit_signal("back_to_menu", 'About')
+
+
+func _on_SPLink_pressed():
+	OS.shell_open("https://www.sentencingproject.org/about-us/")
+
+
+func _on_FAMMLink_pressed():
+	OS.shell_open("https://famm.org/")
+
+
+func _on_NAACPLink_pressed():
+	OS.shell_open("https://www.naacpldf.org/about-us/")
+
+
+func _on_ResearchPaperLink_pressed():
+	OS.shell_open("https://docs.google.com/document/d/1CjcdIaMYjTlBSHxinNq51bPOaUBN2GKE9UpzNegWfUw/edit?usp=sharing")
