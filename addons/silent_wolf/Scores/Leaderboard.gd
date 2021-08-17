@@ -37,8 +37,8 @@ func render_board(scores, local_scores):
 	else:
 		if !scores:
 			add_no_scores_message()
-	for score in all_scores:
-		add_item(score.player_name, str(int(score.score)))
+	for item in all_scores:
+		add_item(item.player_name, str(int(item.score)))
 
 
 
@@ -58,7 +58,8 @@ func merge_scores_with_local_scores(scores, local_scores, max_scores=10):
 			scores.sort_custom(self, "sort_by_score");
 	var return_scores = scores
 	if scores.size() > max_scores:
-		return_scores = scores.resize(max_scores)
+		scores.pop_back()
+		return_scores = scores
 	return return_scores
 
 
