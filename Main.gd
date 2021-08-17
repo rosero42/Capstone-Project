@@ -41,7 +41,7 @@ func _create_game():
 	remove_child(get_node("Menu"))
 	game.connect("back_to_menu", self, "_back_from_level")
 	game.connect("game_over", self, "_game_over")
-	print_tree()
+	
 
 func _load_about():
 	print("_load about")
