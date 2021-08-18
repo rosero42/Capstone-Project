@@ -4,6 +4,8 @@ extends Node2D
 #export (PackedScene) var Coin
 signal back_to_menu
 signal game_over
+var roundnum = 1
+var speedinc = 0
 
 
 # Declare member variables here. Examples:
@@ -27,16 +29,17 @@ func _ready():
 	for i in range(10):
 		$EnemyPath/EnemySpawnLocation.offset = randi()
 		var enemy= preload("res://src/Character/Enemy.tscn").instance()
+		enemy.speed.x += speedinc
 		add_child(enemy)
 		enemy.position = $EnemyPath/EnemySpawnLocation.position
-		
-
+	speedinc += 50
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if $Player.position.x > $EndPosition.position.x:
 		$Player.position = $StartPosition.position
+		roundnum += 1
 		_ready()
 	elif $Player.position.x < $StartPosition.position.x:
 		$Player.position = $StartPosition.position

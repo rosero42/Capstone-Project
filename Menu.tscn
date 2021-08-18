@@ -47,10 +47,10 @@ __meta__ = {
 }
 
 [node name="InstructionsButton" type="Button" parent="."]
-margin_left = 410.585
-margin_top = 217.091
-margin_right = 654.585
-margin_bottom = 278.091
+margin_left = 193.548
+margin_top = 230.508
+margin_right = 415.548
+margin_bottom = 291.508
 custom_fonts/font = SubResource( 2 )
 text = "How to Play"
 __meta__ = {
@@ -58,10 +58,10 @@ __meta__ = {
 }
 
 [node name="PlayButton" type="Button" parent="."]
-margin_left = 484.208
-margin_top = 348.29
-margin_right = 571.208
-margin_bottom = 409.29
+margin_left = 610.0
+margin_top = 230.5
+margin_right = 832.0
+margin_bottom = 291.5
 custom_fonts/font = SubResource( 3 )
 text = "Play!"
 __meta__ = {
@@ -69,12 +69,23 @@ __meta__ = {
 }
 
 [node name="AboutButton" type="Button" parent="."]
-margin_left = 449.284
-margin_top = 481.376
-margin_right = 612.284
-margin_bottom = 542.376
+margin_left = 193.548
+margin_top = 386.441
+margin_right = 415.548
+margin_bottom = 447.441
 custom_fonts/font = SubResource( 4 )
 text = "About"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeaderButton" type="Button" parent="."]
+margin_left = 610.0
+margin_top = 386.44
+margin_right = 832.0
+margin_bottom = 447.44
+custom_fonts/font = SubResource( 4 )
+text = "Leaderboard"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -82,3 +93,4 @@ __meta__ = {
 [connection signal="pressed" from="InstructionsButton" to="." method="_on_InstructionsButton_pressed"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="AboutButton" to="." method="_on_AboutButton_pressed"]
+[connection signal="pressed" from="LeaderButton" to="." method="_on_LeaderButton_pressed"]

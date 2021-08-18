@@ -28,3 +28,7 @@ func _on_PlayButton_pressed():
 
 func _on_AboutButton_pressed():
 	emit_signal("load_about")
+
+
+func _on_LeaderButton_pressed():
+	get_tree().change_scene("res://addons/silent_wolf/Scores/Leaderboard.tscn")
