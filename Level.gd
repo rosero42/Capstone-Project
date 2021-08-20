@@ -16,16 +16,26 @@ var speedinc = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
-	for i in range(20):
-		$ItemPath/ItemSpawnLocation.offset = randi()
+	for i in range(10):
+		$ItemPathGround/ItemGroundSpawnLocation.offset = randi()
 		var coin = preload("res://src/Coin.tscn").instance()
 		add_child(coin)
-		coin.position = $ItemPath/ItemSpawnLocation.position
-	for i in range(30):
-		$ItemPath/ItemSpawnLocation.offset = randi()
+		coin.position = $ItemPathGround/ItemGroundSpawnLocation.position
+	for i in range(10):
+		$ItemPathPlatform/ItemPathPlatformSpawn.offset = randi()
+		var coin = preload("res://src/Coin.tscn").instance()
+		add_child(coin)
+		coin.position = $ItemPathPlatform/ItemPathPlatformSpawn.position
+	for i in range(15):
+		$ItemPathGround/ItemGroundSpawnLocation.offset = randi()
 		var food = preload("res://src/Food.tscn").instance()
 		add_child(food)
-		food.position = $ItemPath/ItemSpawnLocation.position
+		food.position = $ItemPathGround/ItemGroundSpawnLocation.position
+	for i in range(15):
+		$ItemPathPlatform/ItemPathPlatformSpawn.offset = randi()
+		var food = preload("res://src/Food.tscn").instance()
+		add_child(food)
+		food.position = $ItemPathPlatform/ItemPathPlatformSpawn.position
 	for i in range(10):
 		$EnemyPath/EnemySpawnLocation.offset = randi()
 		var enemy= preload("res://src/Character/Enemy.tscn").instance()
@@ -37,7 +47,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if $Player.position.x > $EndPosition.position.x:
+	if $Player.position.y > $EndPosition.position.y:
 		$Player.position = $StartPosition.position
 		roundnum += 1
 		_ready()

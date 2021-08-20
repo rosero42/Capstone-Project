@@ -54,20 +54,32 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 2.0
-margin_top = 194.0
-margin_right = 1033.0
-margin_bottom = 596.0
+margin_left = 10.3731
+margin_top = 455.565
+margin_right = 485.373
+margin_bottom = 588.565
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Stay alive and collect coins as long as possible!
-Collect food to sustain your rapidly depleting health.
-Don’t let the rats catch you! They will slow you down.
-Get hit too many times and you could get stuck!
-Stomp on the rats to remove them.
-Use left and right arrows to move and up arrow to jump!
-Use WAD keys for movement if you prefer
-"
+text = "Move Left: A key or left arrow
+Move Right: D key or right arrow
+Jump: W key, up arrow, or space bar"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = -3.0
+margin_top = 192.0
+margin_right = 1029.0
+margin_bottom = 399.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Run through the city to collect as many coins as you can!
+Collect food to replenish your rapidly depleting health.
+Avoid the rats, or else they will slow you down. 
+Be careful not to get hit too many times or you could get stuck!
+Jump on the rats to kill them."
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

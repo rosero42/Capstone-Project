@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://game_assets/Stickman Character Sprites 05/Character Sprites/Idle (4).png" type="Texture" id=1]
 [ext_resource path="res://src/Character/Player.gd" type="Script" id=2]
@@ -52,15 +52,19 @@ height = 56.0897
 radius = 8.1819
 height = 30.0291
 
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="DynamicFont" id=4]
+size = 40
+font_data = ExtResource( 20 )
+
+[sub_resource type="CapsuleShape2D" id=5]
 radius = 9.67117
 height = 9.3631
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 size = 28
 font_data = ExtResource( 20 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=7]
 size = 52
 font_data = ExtResource( 20 )
 
@@ -73,7 +77,7 @@ speed = Vector2( 800, 2000 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.085, 0.085 )
 frames = SubResource( 1 )
-frame = 6
+frame = 7
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -100,10 +104,10 @@ position = Vector2( -0.0874138, 6.39572 )
 shape = SubResource( 3 )
 
 [node name="HealthBar" type="ProgressBar" parent="."]
-margin_left = -237.933
-margin_top = -179.455
-margin_right = -110.933
-margin_bottom = -165.455
+margin_left = -296.332
+margin_top = -201.48
+margin_right = -169.332
+margin_bottom = -187.48
 max_value = 1000.0
 value = 1000.0
 __meta__ = {
@@ -121,10 +125,11 @@ __meta__ = {
 }
 
 [node name="Score" type="Label" parent="."]
-margin_left = 203.647
-margin_top = -191.626
-margin_right = 243.647
-margin_bottom = -177.626
+margin_left = 245.027
+margin_top = -209.646
+margin_right = 285.027
+margin_bottom = -154.646
+custom_fonts/font = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -137,14 +142,14 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
 light_mask = 0
 position = Vector2( -0.210224, 12.193 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="Stuck" type="Label" parent="."]
 margin_left = -112.203
 margin_top = -133.657
 margin_right = 116.797
 margin_bottom = -94.6572
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "Uh oh! You're Stuck!"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -155,7 +160,7 @@ margin_left = -95.8033
 margin_top = -108.546
 margin_right = 104.197
 margin_bottom = -36.5455
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.905882, 0.0509804, 0.0509804, 1 )
 text = "GAME OVER!"
 __meta__ = {
